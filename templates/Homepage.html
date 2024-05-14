@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+    <title>Crime Reporting System</title>
+</head>
+
+<body>
+    {% include "nav.html" %}
+    {% include "messages.html" %}
+    <!--Hero section-->
+    <section id="home" class="bg-dark text-light p-5 text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>Report a <span class="text-danger">Criminal case
+                        </span></h1>
+                    <p class="lead my-4">
+                        Introducing our web-based crime reporting and record management system,
+                        your one-stop solution for efficient and secure crime reporting.
+                        Experience seamless crime reporting and record management with our user-friendly web platform.
+                    </p>
+                    <a  class="btn btn-primary btn-lg" href="{% url 'login'%}"> Register your Case</a>
+                    
+                </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="{% static 'images/Police car-rafiki.svg' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!--news letter-->
+    <section class="bg-primary text-light p-5">
+       
+    </section>
+
+    <!--cards-->
+    <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="fas fa-file" aria-hidden="true"></i>                            </div>
+                            <h3 class="card-title mb-3">
+                                Crimes
+                            </h3>
+                            <h1 class="counter">{{ crime_count }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Users
+                            </h3>
+                            <h1 class="counter">{{user_count}}<h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="fa fa-address-card" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Suspects
+                            </h3>
+                            <h1 class="counter">{{suspect_count}}<h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="jquery.counterup.min.js"></script>
+        <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+
+
+
+        <script>
+            jQuery(document).ready(function($){
+                $('.counter').counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+            });
+        </script>
+</body>
+
+</html>

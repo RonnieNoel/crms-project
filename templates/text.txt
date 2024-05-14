@@ -1,0 +1,8 @@
+introduction
+problem statement
+literature review 
+methodology
+objective
+motivation
+results and system presenation
+(the system screen shots)

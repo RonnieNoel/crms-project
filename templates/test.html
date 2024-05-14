@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <th>Profile</th>
+        <th>Name</th>
+        <th>Option</th>
+    </tr>
+    {% for suspect in suspect_data%}
+    <tr>
+        
+        <td><img src="{% static 'images/user.png'%}" alt=""></td>
+        <td>{{suspect.name}}</td>
+        <td><a href="#" class="btn">View</a></td>
+    </tr>
+    {%endfor%}
+</table>

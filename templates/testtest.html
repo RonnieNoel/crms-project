@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        /* Reset default form styles */
+        body, form, input, button {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center the form */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Style input fields */
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Style submit button */
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for submit button */
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Optional: Add some spacing between form elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Optional: Style labels */
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'submitform'%}" method="POST" class="bootstrap-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="crimeName">Crime Name</label>
+            <input type="text" name="name" id="crimeName" placeholder="Enter crime name">
+        </div>
+        <div class="form-group">
+            <label for="crimeDescription">Description</label>
+            <input type="text" name="description" id="crimeDescription" placeholder="Enter description">
+        </div>
+        <div class="form-group">
+            <label for="crimeLocation">Location</label>
+            <input type="text" name="location" id="crimeLocation" placeholder="Enter location">
+        </div>
+        <div class="form-group">
+            <label for="crimeDateReported">Date Reported</label>
+            <input type="date" name="date_reported" id="crimeDateReported">
+        </div>
+        <div class="form-group">
+            <label for="crimeTimeReported">Time Reported</label>
+            <input type="time" name="time_reported" id="crimeTimeReported">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
