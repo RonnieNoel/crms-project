@@ -55,7 +55,7 @@ def DashView(request):
     suspect_count = Suspect.objects.count()
     evidence_count = Evidence.objects.count()
     investigation_count = Investigation.objects.count()
-
+    
     data = Crime.objects.all().order_by('-reference')[:5]
     suspects=Suspect.objects.all().order_by('-id')[:5]
     return render(request, 'Dashboard.html', {
